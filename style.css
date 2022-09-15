@@ -1,0 +1,47 @@
+.buttons {
+    /* background-color: red; */
+    max-width: 340px;
+    height: 500px;
+    border-width: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+    gap: 100px;
+    background-color: grey;
+}
+button {
+    width: 80px;
+    height: 90px;
+    border-radius: 10px;
+    background-color: aqua;
+    align-items: center;
+    flex: 1;
+    text-align: center;
+}
+.calculator {
+    display: flex;
+    /* background-color: blue; */
+    justify-content: center;
+
+}
+
+.display {
+    text-align: right;
+    height: 70px;
+    gap: 20px;
+    background-color: white;
+    border-radius: 10px;
+    font-size: 50px;
+}
+
+h1 {
+    font-size: x-large;
+    text-align: center;
+}
+
+
+* {
+    background-color: beige;
+    text-align: center;
+
+}
