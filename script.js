@@ -53,3 +53,57 @@ const operate = function(operator, num, num2) {
     }
 
 }
+//clicking numbers
+function buttonsClicked (value) {
+display.textContent += (value)
+}
+
+const one = document.querySelector('.one')
+one.addEventListener('click', () => {
+    value = 1
+    buttonsClicked(value)
+})
+const two = document.querySelector('.two')
+two.addEventListener('click', () => {
+    value = 2
+    buttonsClicked(value)
+})
+const three = document.querySelector('.three')
+three.addEventListener('click', () => {
+    value = 3
+    buttonsClicked(value)
+})
+const four = document.querySelector('.four')
+four.addEventListener('click', () => {
+    buttonsClicked(4)
+})
+const five = document.querySelector('.five')
+five.addEventListener('click', () => {
+    buttonsClicked(5)
+})
+const six = document.querySelector('.six')
+six.addEventListener('click', () => {
+    buttonsClicked(6)
+})
+const seven = document.querySelector('.seven')
+seven.addEventListener('click', () => {
+    buttonsClicked(7)
+})
+const eight = document.querySelector('.eight')
+eight.addEventListener('click', () => {
+    buttonsClicked(8)
+})
+const nine = document.querySelector('.nine')
+nine.addEventListener('click', () => {
+    buttonsClicked(9)
+})
+const zero = document.querySelector('.zero')
+zero.addEventListener('click', () => {
+    buttonsClicked(0)
+})
+
+
+
+// display function
+const display = document.querySelector('.display')
+display.textContent = ('')
