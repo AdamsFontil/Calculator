@@ -1,7 +1,7 @@
 .buttons {
     /* background-color: red; */
     max-width: 340px;
-    height: 500px;
+    height: 460px;
     border-width: 10px;
     border-radius: 10px;
     border-style: solid;
@@ -11,11 +11,11 @@
 }
 button {
     width: 80px;
-    height: 85px;
+    height: 90px;
     border-radius: 10px;
-    background-color: aqua;
+    background-color: rgb(7, 195, 233);
     align-items: center;
-    flex: 1;
+    justify-content: center;
     text-align: center;
 }
 .calculator {
@@ -33,6 +33,11 @@ button {
     background-color: white;
     border-radius: 10px;
     font-size: 25px;
+}
+
+.display,
+.result {
+    background-color: white;
 }
 
 h1 {

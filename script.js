@@ -61,7 +61,7 @@ const operate = function(operator, num, num2) {
 const display = document.querySelector('.display')
 display.textContent = ('')
 const result = document.querySelector('.result')
-result.textContent = ('testing')
+result.textContent = ('')
 
 let newCurrent;
 let start;
@@ -177,16 +177,16 @@ division.addEventListener('click', () => {
     buttonsClicked(` ${'/'} `)
     start = (current.length)
 })
-const factor = document.querySelector('.factorial')
-factor.addEventListener('click', () => {
-    console.log('factor')
-    buttonsClicked('!')
-    answer = factorial(5)
-    console.log(current)
-    console.log(answer)
-    result.textContent += answer
-    console.log(answer)
-})
+// const factor = document.querySelector('.factorial')
+// factor.addEventListener('click', () => {
+//     console.log('factor')
+//     buttonsClicked('!')
+//     answer = factorial(5)
+//     console.log(current)
+//     console.log(answer)
+//     result.textContent += answer
+//     console.log(answer)
+// })
 const equals = document.querySelector('.equals')
 equals.addEventListener('click', () => {
     num2 = Number(newCurrent)
@@ -196,6 +196,8 @@ equals.addEventListener('click', () => {
     console.log(newCurrent)
     answer = (operate(operatator,num,num2))
     result.textContent = answer
+    console.log(answer)
+    console.log(result)
 })
 
 const clear = document.querySelector('.clear')
