@@ -24,7 +24,7 @@ const add = function(num, num2) {
 //     return product
 //   };
 
-    const multiply = function (num, num2) {
+  const multiply = function (num, num2) {
         return num * num2
     }
 
@@ -65,6 +65,8 @@ result.textContent = ('testing')
 
 let newCurrent;
 let start;
+let clearly;
+let num2;
 
 // text = 'hello im adams'
 // text = [text]
@@ -75,9 +77,19 @@ let start;
 
 //clicking numbers
 function buttonsClicked (value) {
+    if (clearly === 9) {
+        display.textContent = ''
+        console.log('clear works')
+        current = ''
+        newCurrent = ''
+        console.log(current)
+        console.log(newCurrent)
+        clearly = 10
+        console.log(clearly)
+    }
 current = display.textContent += (value)
 newCurrent = current.slice(start)
-console.log(newCurrent)
+// console.log(`clearly = ${clearly}`)
 }
 
 const one = document.querySelector('.one')
@@ -132,6 +144,10 @@ plus.addEventListener('click', () => {
     // console.log(newCurrent)
     buttonsClicked(` ${'+'} `)
     start = (current.length)
+    console.log(start)
+    console.log(num)
+    console.log(num2)
+
 })
 const minus = document.querySelector('.subtract')
 minus.addEventListener('click', () => {
@@ -180,4 +196,20 @@ equals.addEventListener('click', () => {
     console.log(newCurrent)
     answer = (operate(operatator,num,num2))
     result.textContent = answer
+})
+
+const clear = document.querySelector('.clear')
+clear.addEventListener('click', () => {
+   current = ''
+   newCurrent = ''
+   num = ''
+   num2 = ''
+   clearly = 9
+   console.log(clearly)
+   console.log(current)
+   console.log(newCurrent)
+   console.log(num)
+   console.log(num2)
+   console.log('testing clear')
+
 })
