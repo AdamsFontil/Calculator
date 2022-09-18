@@ -63,10 +63,21 @@ display.textContent = ('')
 const result = document.querySelector('.result')
 result.textContent = ('testing')
 
+let newCurrent;
+let start;
+
+// text = 'hello im adams'
+// text = [text]
+// console.log(text)
+// text2 = text.splice(0,1)
+// console.log(text2)
+
 
 //clicking numbers
 function buttonsClicked (value) {
 current = display.textContent += (value)
+newCurrent = current.slice(start)
+console.log(newCurrent)
 }
 
 const one = document.querySelector('.one')
@@ -106,6 +117,7 @@ eight.addEventListener('click', () => {
 })
 const nine = document.querySelector('.nine')
 nine.addEventListener('click', () => {
+    value = 9
     buttonsClicked(9)
 })
 const zero = document.querySelector('.zero')
@@ -116,10 +128,10 @@ const plus = document.querySelector('.add')
 plus.addEventListener('click', () => {
     num = Number(current)
     operatator = 'add'
-    // console.log(current)
-    // console.log(num)
+    // // console.log(current)
+    // console.log(newCurrent)
     buttonsClicked(` ${'+'} `)
-
+    start = (current.length)
 })
 const minus = document.querySelector('.subtract')
 minus.addEventListener('click', () => {
@@ -128,6 +140,7 @@ minus.addEventListener('click', () => {
     // console.log(current)
     // console.log(num)
     buttonsClicked(` ${'-'} `)
+    start = (current.length)
 })
 const multiplication = document.querySelector('.multiply')
 multiplication.addEventListener('click', () => {
@@ -136,6 +149,7 @@ multiplication.addEventListener('click', () => {
     // console.log(current)
     // console.log(num)
     buttonsClicked(` ${'*'} `)
+    start = (current.length)
 
 })
 const division = document.querySelector('.divide')
@@ -145,6 +159,7 @@ division.addEventListener('click', () => {
     // console.log(current)
     // console.log(num)
     buttonsClicked(` ${'/'} `)
+    start = (current.length)
 })
 const factor = document.querySelector('.factorial')
 factor.addEventListener('click', () => {
@@ -158,10 +173,11 @@ factor.addEventListener('click', () => {
 })
 const equals = document.querySelector('.equals')
 equals.addEventListener('click', () => {
-    num2 = 2
-    console.log(operatator)
-    console.log(typeof(num))
-    console.log(typeof(num2))
+    num2 = Number(newCurrent)
+    // console.log(operatator)
+    // console.log(typeof(num))
+    // console.log(typeof(num2))
+    console.log(newCurrent)
     answer = (operate(operatator,num,num2))
     result.textContent = answer
 })
