@@ -16,13 +16,17 @@ const add = function(num, num2) {
     return sum
     };
 
-  const multiply = function(array) {
-      let product = 1;
-    for (num in array) {
-      product *= array[num]
+//   const multiply = function(array) {
+//       let product = 1;
+//     for (num in array) {
+//       product *= array[num]
+//     }
+//     return product
+//   };
+
+    const multiply = function (num, num2) {
+        return num * num2
     }
-    return product
-  };
 
   const power = function(num, power) {
     return num ** power
@@ -42,20 +46,27 @@ const add = function(num, num2) {
 
   // operate
 const operate = function(operator, num, num2) {
-    if (operator === add) {
+    if (operator === 'add') {
         return add(num,num2)
-    } else if (operator === subtract) {
+    } else if (operator === 'subtract') {
         return subtract(num,num2)
-    } else if (operator === multiply) {
+    } else if (operator === 'multiply') {
         return multiply(num,num2)
-    } else if (operator === divide) {
-        return subtract(num,num2)
+    } else if (operator === 'divide') {
+        return divide(num,num2)
     }
-
 }
+
+// display function
+const display = document.querySelector('.display')
+display.textContent = ('')
+const result = document.querySelector('.result')
+result.textContent = ('testing')
+
+
 //clicking numbers
 function buttonsClicked (value) {
-display.textContent += (value)
+current = display.textContent += (value)
 }
 
 const one = document.querySelector('.one')
@@ -101,9 +112,56 @@ const zero = document.querySelector('.zero')
 zero.addEventListener('click', () => {
     buttonsClicked(0)
 })
+const plus = document.querySelector('.add')
+plus.addEventListener('click', () => {
+    num = Number(current)
+    operatator = 'add'
+    // console.log(current)
+    // console.log(num)
+    buttonsClicked(` ${'+'} `)
 
+})
+const minus = document.querySelector('.subtract')
+minus.addEventListener('click', () => {
+    num = Number(current)
+    operatator = 'subtract'
+    // console.log(current)
+    // console.log(num)
+    buttonsClicked(` ${'-'} `)
+})
+const multiplication = document.querySelector('.multiply')
+multiplication.addEventListener('click', () => {
+    num = (Number(current))
+    operatator = 'multiply'
+    // console.log(current)
+    // console.log(num)
+    buttonsClicked(` ${'*'} `)
 
-
-// display function
-const display = document.querySelector('.display')
-display.textContent = ('')
+})
+const division = document.querySelector('.divide')
+division.addEventListener('click', () => {
+    num = Number(current)
+    operatator = 'divide'
+    // console.log(current)
+    // console.log(num)
+    buttonsClicked(` ${'/'} `)
+})
+const factor = document.querySelector('.factorial')
+factor.addEventListener('click', () => {
+    console.log('factor')
+    buttonsClicked('!')
+    answer = factorial(5)
+    console.log(current)
+    console.log(answer)
+    result.textContent += answer
+    console.log(answer)
+})
+const equals = document.querySelector('.equals')
+equals.addEventListener('click', () => {
+    num2 = 2
+    console.log(operatator)
+    console.log(typeof(num))
+    console.log(typeof(num2))
+    answer = (operate(operatator,num,num2))
+    result.textContent = answer
+})
