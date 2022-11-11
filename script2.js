@@ -55,6 +55,7 @@ current = display.textContent += (value)
 
 newCurrent = current.slice(start)
 operations.num2 = Number(newCurrent)
+result.textContent = operations.num
 }
 
 
@@ -66,6 +67,7 @@ plus.addEventListener('click', () => {
         operations.num = Number(firstNum)
     } else {
         answer = operations.work()
+        operations.operator = 'add'
         operations.num = answer
     }
     buttonsClicked(` ${'+'} `)
@@ -73,9 +75,17 @@ plus.addEventListener('click', () => {
 })
 const minus = document.querySelector('.subtract')
 minus.addEventListener('click', () => {
-    operations.operator = 'subtract'
-    start = (current.length)
+    if (operations.num === undefined) {
+        operations.operator = 'subtract'
+        firstNum = current
+        operations.num = Number(firstNum)
+    } else {
+        answer = operations.work()
+        operations.operator = 'subtract'
+        operations.num = answer
+    }
     buttonsClicked(` ${'-'} `)
+    start = (current.length)
 })
 const equals = document.querySelector('.equals')
 equals.addEventListener('click', () => {
@@ -136,20 +146,30 @@ zero.addEventListener('click', () => {
 
 const multiplication = document.querySelector('.multiply')
 multiplication.addEventListener('click', () => {
-    num = (Number(current))
-    operatator = 'multiply'
-    // console.log(current)
-    // console.log(num)
+    if (operations.num === undefined) {
+        operations.operator = 'multiply'
+        firstNum = current
+        operations.num = Number(firstNum)
+    } else {
+        answer = operations.work()
+        operations.operator = 'multiply'
+        operations.num = answer
+    }
     buttonsClicked(` ${'*'} `)
     start = (current.length)
 
 })
 const division = document.querySelector('.divide')
 division.addEventListener('click', () => {
-    num = Number(current)
-    operatator = 'divide'
-    // console.log(current)
-    // console.log(num)
+    if (operations.num === undefined) {
+        operations.operator = 'divide'
+        firstNum = current
+        operations.num = Number(firstNum)
+    } else {
+        answer = operations.work()
+        operations.operator = 'divide'
+        operations.num = answer
+    }
     buttonsClicked(` ${'/'} `)
     start = (current.length)
 })
