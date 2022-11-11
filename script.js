@@ -1,12 +1,7 @@
 //operations
-const add = function(num, num2) {
-    return num + num2
-  };
+const add = (num, num2) => num + num2
 
-  const subtract = function(num, num2) {
-  return num - num2
-
-  };
+  const subtract = (num, num2) => num - num2
 
   const sum = function(array) {
     let sum = 0;
@@ -56,6 +51,12 @@ const operate = function(operator, num, num2) {
         return divide(num,num2)
     }
 }
+// const operations = {
+//     num: num,
+//     num2: num2,
+//     op: operatator,
+
+// }
 
 // display function
 const display = document.querySelector('.display')
@@ -67,12 +68,8 @@ let newCurrent;
 let start;
 let clearly;
 let num2;
-
-// text = 'hello im adams'
-// text = [text]
-// console.log(text)
-// text2 = text.splice(0,1)
-// console.log(text2)
+let operatator;
+let num;
 
 
 //clicking numbers
@@ -89,7 +86,13 @@ function buttonsClicked (value) {
     }
 current = display.textContent += (value)
 newCurrent = current.slice(start)
-// console.log(`clearly = ${clearly}`)
+num2 = Number(newCurrent)
+answer = (operate(operatator,num,num2))
+result.textContent = answer
+if (typeof(answer) !== 'undefined') {
+    current = answer
+    display.textContent = current
+}
 }
 
 const one = document.querySelector('.one')
@@ -138,15 +141,19 @@ zero.addEventListener('click', () => {
 })
 const plus = document.querySelector('.add')
 plus.addEventListener('click', () => {
-    num = Number(current)
+    let answer = ''
+    num = answer
+    display.textContent += answer
+    // newResult = answer
+    // display.textContent = newResult
+    if (num === '') {
+    num = (current)
     operatator = 'add'
-    // // console.log(current)
-    // console.log(newCurrent)
     buttonsClicked(` ${'+'} `)
     start = (current.length)
-    console.log(start)
-    console.log(num)
-    console.log(num2)
+    }
+
+
 
 })
 const minus = document.querySelector('.subtract')
@@ -190,14 +197,10 @@ division.addEventListener('click', () => {
 const equals = document.querySelector('.equals')
 equals.addEventListener('click', () => {
     num2 = Number(newCurrent)
-    // console.log(operatator)
-    // console.log(typeof(num))
-    // console.log(typeof(num2))
-    console.log(newCurrent)
     answer = (operate(operatator,num,num2))
     result.textContent = answer
-    console.log(answer)
-    console.log(result)
+    num = answer
+
 })
 
 const clear = document.querySelector('.clear')
