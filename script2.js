@@ -144,8 +144,9 @@ division.addEventListener('click', () => {
 
 const clear = document.querySelector('.clear')
 clear.addEventListener('click', () => {
-   num = ''
-   num2 = ''
+   operations.num = undefined
+   operations.num2 = undefined
+   operations.answer = undefined
    display.textContent = ''
    result.textContent = ''
 })
