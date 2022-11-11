@@ -56,6 +56,9 @@ current = display.textContent += (value)
 newCurrent = current.slice(start)
 operations.num2 = Number(newCurrent)
 result.textContent = operations.num
+// if (value = null) {
+//     display.textContent = operations.num
+// }
 }
 
 
@@ -65,7 +68,11 @@ plus.addEventListener('click', () => {
         operations.operator = 'add'
         firstNum = current
         operations.num = Number(firstNum)
-    } else {
+    } else if ('answer' in operations) {
+        display.textContent = operations.answer
+        operations.num = operations.answer
+    }
+    else {
         answer = operations.work()
         operations.operator = 'add'
         operations.num = answer
@@ -79,6 +86,10 @@ minus.addEventListener('click', () => {
         operations.operator = 'subtract'
         firstNum = current
         operations.num = Number(firstNum)
+    } else if ('answer' in operations) {
+        operations.operator = 'subtract'
+        display.textContent = operations.answer
+        operations.num = operations.answer
     } else {
         answer = operations.work()
         operations.operator = 'subtract'
@@ -89,10 +100,8 @@ minus.addEventListener('click', () => {
 })
 const equals = document.querySelector('.equals')
 equals.addEventListener('click', () => {
-    operations.num2 = Number(newCurrent)
-    answer = operations.work()
-    operations.answer = answer;
-    operations.num2 = 'empty';
+    operations.answer = operations.work()
+    result.textContent = operations.answer
 })
 
 
@@ -150,6 +159,10 @@ multiplication.addEventListener('click', () => {
         operations.operator = 'multiply'
         firstNum = current
         operations.num = Number(firstNum)
+    } else if ('answer' in operations) {
+        operations.operator = 'multiply'
+        display.textContent = operations.answer
+        operations.num = operations.answer
     } else {
         answer = operations.work()
         operations.operator = 'multiply'
@@ -165,6 +178,10 @@ division.addEventListener('click', () => {
         operations.operator = 'divide'
         firstNum = current
         operations.num = Number(firstNum)
+    } else if ('answer' in operations) {
+        operations.operator = 'divide'
+        display.textContent = operations.answer
+        operations.num = operations.answer
     } else {
         answer = operations.work()
         operations.operator = 'divide'
