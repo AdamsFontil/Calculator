@@ -56,9 +56,10 @@ current = display.textContent += (value)
 newCurrent = current.slice(start)
 operations.num2 = Number(newCurrent)
 result.textContent = operations.num
-// if (value = null) {
-//     display.textContent = operations.num
-// }
+ if (value === 'cut') {
+    console.log('cut')
+    display.textContent = current.slice(1)
+ }
 }
 
 
@@ -102,6 +103,56 @@ const equals = document.querySelector('.equals')
 equals.addEventListener('click', () => {
     operations.answer = operations.work()
     result.textContent = operations.answer
+})
+const multiplication = document.querySelector('.multiply')
+multiplication.addEventListener('click', () => {
+    if (operations.num === undefined) {
+        operations.operator = 'multiply'
+        firstNum = current
+        operations.num = Number(firstNum)
+    } else if ('answer' in operations) {
+        operations.operator = 'multiply'
+        display.textContent = operations.answer
+        operations.num = operations.answer
+    } else {
+        answer = operations.work()
+        operations.operator = 'multiply'
+        operations.num = answer
+    }
+    buttonsClicked(` ${'*'} `)
+    start = (current.length)
+
+})
+const division = document.querySelector('.divide')
+division.addEventListener('click', () => {
+    if (operations.num === undefined) {
+        operations.operator = 'divide'
+        firstNum = current
+        operations.num = Number(firstNum)
+    } else if ('answer' in operations) {
+        operations.operator = 'divide'
+        display.textContent = operations.answer
+        operations.num = operations.answer
+    } else {
+        answer = operations.work()
+        operations.operator = 'divide'
+        operations.num = answer
+    }
+    buttonsClicked(` ${'/'} `)
+    start = (current.length)
+})
+
+const clear = document.querySelector('.clear')
+clear.addEventListener('click', () => {
+   num = ''
+   num2 = ''
+   display.textContent = ''
+   result.textContent = ''
+})
+
+const back = document.querySelector('.delete')
+clear.addEventListener('click', () => {
+    value = 'cut'
 })
 
 
@@ -150,70 +201,4 @@ nine.addEventListener('click', () => {
 const zero = document.querySelector('.zero')
 zero.addEventListener('click', () => {
     buttonsClicked(0)
-})
-
-
-const multiplication = document.querySelector('.multiply')
-multiplication.addEventListener('click', () => {
-    if (operations.num === undefined) {
-        operations.operator = 'multiply'
-        firstNum = current
-        operations.num = Number(firstNum)
-    } else if ('answer' in operations) {
-        operations.operator = 'multiply'
-        display.textContent = operations.answer
-        operations.num = operations.answer
-    } else {
-        answer = operations.work()
-        operations.operator = 'multiply'
-        operations.num = answer
-    }
-    buttonsClicked(` ${'*'} `)
-    start = (current.length)
-
-})
-const division = document.querySelector('.divide')
-division.addEventListener('click', () => {
-    if (operations.num === undefined) {
-        operations.operator = 'divide'
-        firstNum = current
-        operations.num = Number(firstNum)
-    } else if ('answer' in operations) {
-        operations.operator = 'divide'
-        display.textContent = operations.answer
-        operations.num = operations.answer
-    } else {
-        answer = operations.work()
-        operations.operator = 'divide'
-        operations.num = answer
-    }
-    buttonsClicked(` ${'/'} `)
-    start = (current.length)
-})
-// const factor = document.querySelector('.factorial')
-// factor.addEventListener('click', () => {
-//     console.log('factor')
-//     buttonsClicked('!')
-//     answer = factorial(5)
-//     console.log(current)
-//     console.log(answer)
-//     result.textContent += answer
-//     console.log(answer)
-// })
-
-
-const clear = document.querySelector('.clear')
-clear.addEventListener('click', () => {
-   current = ''
-   newCurrent = ''
-   num = ''
-   num2 = ''
-   clearly = 9
-   console.log(clearly)
-   console.log(current)
-   console.log(newCurrent)
-   console.log(num)
-   console.log(num2)
-   console.log('testing clear')
-
 })

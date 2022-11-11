@@ -1,23 +1,36 @@
 .buttons {
-    /* background-color: red; */
+    background-color: red;
     max-width: 340px;
-    height: 560px;
+    height: 500px;
     border-width: 10px;
     border-radius: 10px;
     border-style: solid;
     border-color: black;
     gap: 200px;
     background-color: grey;
+    justify-content: center;
+    align-items: center;
 }
 button {
-    width: 80px;
-    height: 90px;
-    border-radius: 10px;
-    background-color: rgb(7, 195, 233);
+    width: 70px;
+    height: 60px;
+    margin: 2px;
+    border-radius: 6px;
+    background-color: white;
+    border: 2px solid black;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
+/* .add {
+    background-color: yellow;
+}
+.operation {
+    background-color: yellow;
+}
+.equals {
+    background-color: rgb(10, 82, 226);
+} */
 .calculator {
     display: flex;
     /* background-color: blue; */
@@ -25,8 +38,14 @@ button {
     align-items: flex-end;
 
 }
+.clear {
+    background-color: red;
+}
+.delete {
+    background-color: orange;
+}
 .clear, .delete {
-    width: 160px;
+    width: 148px;
     text-align: center;
 }
 .screen {
@@ -35,24 +54,29 @@ button {
     flex-direction: column;
     height: 110px;
     gap: 30px;
-    /* background-color: rgb(222, 20, 20); */
+    background-color: white;
+    border: 3px solid black;
+    margin: 20px;
     border-radius: 10px;
     font-size: 25px;
 }
 
-.display,
+/* .display,
 .result {
     background-color: white;
-}
+} */
 
 h1 {
     font-size: x-large;
     text-align: center;
 }
 
-
-* {
-    background-color: beige;
-    text-align: right;
-
+.numbers {
+    display: flex;
+    /* background-color: red; */
+    /* padding: 20px; */
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 12px;
 }
