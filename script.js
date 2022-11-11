@@ -86,13 +86,10 @@ function buttonsClicked (value) {
     }
 current = display.textContent += (value)
 newCurrent = current.slice(start)
-num2 = Number(newCurrent)
-answer = (operate(operatator,num,num2))
-result.textContent = answer
-if (typeof(answer) !== 'undefined') {
-    current = answer
-    display.textContent = current
-}
+// num2 = Number(newCurrent)
+// answer = (operate(operatator,num,num2))
+// result.textContent = answer
+// newDisplay = String(answer)
 }
 
 const one = document.querySelector('.one')
@@ -147,7 +144,7 @@ plus.addEventListener('click', () => {
     // newResult = answer
     // display.textContent = newResult
     if (num === '') {
-    num = (current)
+    num = Number(current)
     operatator = 'add'
     buttonsClicked(` ${'+'} `)
     start = (current.length)
