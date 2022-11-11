@@ -151,9 +151,16 @@ clear.addEventListener('click', () => {
    result.textContent = ''
 })
 
+
+let cut = () => {
+    console.log('cut')
+    length = current.length - 1
+    current = current.slice(0, length)
+    display.textContent = current
+}
 const back = document.querySelector('.delete')
-clear.addEventListener('click', () => {
-    value = 'cut'
+back.addEventListener('click', () => {
+    cut()
 })
 
 
